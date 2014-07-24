@@ -1,4 +1,4 @@
-.bottom-arrow(@size: 10px; @color: @gray; @border_width: 2px; @border-color: @gray-dark) {
+.box_arrow(@border-width : 2px, @border-color: #88B7D5, @size: 10px, @color: #C2E1F5) {
 
 	&:after, &:before {
 		top: 100%;
@@ -22,7 +22,7 @@
 		border-color: hsla(hue(@border-color), saturation(@border-color), lightness(@border-color), 0);
 		border-top-color: @border-color;
 
-		border-width: @size + (round(@border_width * 1.41421356));
-		margin-left: -@size - (round(@border_width * 1.41421356));
+		border-width: @size + (round(@border-width * 1.41421356));
+		margin-left: -@size - (round(@border-width * 1.41421356));
 	}
 }
