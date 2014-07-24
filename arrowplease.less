@@ -1,0 +1,28 @@
+.bottom-arrow(@size: 10px; @color: @gray; @border_width: 2px; @border-color: @gray-dark) {
+
+	&:after, &:before {
+		top: 100%;
+		left: 50%;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+		z-index: 1;
+	}
+
+	&:after {
+		border-color: hsla(hue(@color), saturation(@color), lightness(@color), 0);
+		border-top-color: @color;
+		border-width: @size;
+		margin-left: -@size;
+	} 
+	&:before {
+		border-color: hsla(hue(@border-color), saturation(@border-color), lightness(@border-color), 0);
+		border-top-color: @border-color;
+
+		border-width: @size + (round(@border_width * 1.41421356));
+		margin-left: -@size - (round(@border_width * 1.41421356));
+	}
+}
