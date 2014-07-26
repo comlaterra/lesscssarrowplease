@@ -1,8 +1,66 @@
-.box_arrow(@border-width : 2px, @border-color: #88B7D5, @size: 10px, @color: #C2E1F5) {
-
+.place_box_arrow(@border-width, @color, @border-color, @size, @position) when (@position = "bottom"){
 	&:after, &:before {
 		top: 100%;
 		left: 50%;
+	}
+	&:after {
+		border-top-color: @color;
+		margin-left: -@size;
+	}
+	&:before {
+		border-top-color: @border-color;
+		margin-left: -@size - (round(@border-width * 1.41421356));
+	}
+}
+
+.place_box_arrow(@border-width, @color, @border-color, @size, @place) when (@place = "top"){
+	&:after, &:before {
+		bottom: 100%;
+		left: 50%;
+	}
+	&:after {
+		border-bottom-color: @color;
+		margin-left: -@size;
+	}
+	&:before {
+		border-bottom-color: @border-color;
+		margin-left: -@size - (round(@border-width * 1.41421356));
+	}
+}
+
+.place_box_arrow(@border-width, @color, @border-color, @size, @place) when (@place = "left"){
+	&:after, &:before {
+		right: 100%;
+		top: 50%;
+	}
+	&:after {
+		border-right-color: @color;
+		margin-left: -@size;
+		margin-top: -@size;
+	}
+	&:before {
+		border-right-color: @border-color;
+		margin-top: -@size - (round(@border-width * 1.41421356));
+	}
+}
+
+.place_box_arrow(@border-width, @color, @border-color, @size, @place) when (@place = "right"){
+	&:after, &:before {
+		left: 100%;
+		top: 50%;
+	}
+	&:after {
+		border-left-color: @color;
+		margin-top: -@size;
+	}
+	&:before {
+		border-left-color: @border-color;
+		margin-top: -@size - (round(@border-width * 1.41421356));
+	}
+}
+
+.box_arrow(@border-width : 2px, @border-color: #88B7D5, @size: 10px, @color: #C2E1F5, @place: "top") {
+	&:after, &:before {
 		border: solid transparent;
 		content: " ";
 		height: 0;
@@ -14,15 +72,11 @@
 
 	&:after {
 		border-color: hsla(hue(@color), saturation(@color), lightness(@color), 0);
-		border-top-color: @color;
 		border-width: @size;
-		margin-left: -@size;
 	} 
 	&:before {
 		border-color: hsla(hue(@border-color), saturation(@border-color), lightness(@border-color), 0);
-		border-top-color: @border-color;
-
 		border-width: @size + (round(@border-width * 1.41421356));
-		margin-left: -@size - (round(@border-width * 1.41421356));
 	}
+	.place_box_arrow(@border-width, @color, @border-color, @size, @place);
 }
