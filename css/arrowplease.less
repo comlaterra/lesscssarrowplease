@@ -1,4 +1,5 @@
-.box_arrow(@border-width : 2px, @border-color: #88B7D5, @size: 10px, @background-color: #C2E1F5, @place: "top") {
+
+.box_arrow(@border-width : 2px, @border-color: #88B7D5, @size: 10px, @background-color: #C2E1F5, @place, @offset : 50%) {
 	
 	&:after, &:before {
 		border: solid transparent;
@@ -20,13 +21,12 @@
 		border-width: @size + (round(@border-width * 1.41421356));
 	}
 
-	.place_box_arrow(@border-width, @background-color, @border-color, @size);
 }
 
-.place_box_arrow(@border-width, @background-color, @border-color, @size) when (@place = "bottom"){
+.box_arrow(@border-width : 2px, @border-color: #88B7D5, @size: 10px, @background-color: #C2E1F5, @place, @offset: 50%) when (@place = bottom){
 	&:after, &:before {
 		top: 100%;
-		left: 50%;
+		left: @offset;
 	}
 	&:after {
 		border-top-color: @background-color;
@@ -38,11 +38,11 @@
 	}
 }
 
-.place_box_arrow(@border-width, @background-color, @border-color, @size) when (@place = "top"){
+.box_arrow(@border-width : 2px, @border-color: #88B7D5, @size: 10px, @background-color: #C2E1F5, @place, @offset: 50%) when (@place = top){
 
 	&:after, &:before {
 		bottom: 100%;
-		left: 50%;
+		left: @offset;
 	}
 	&:after {
 		border-bottom-color: @background-color;
@@ -54,10 +54,10 @@
 	}
 }
 
-.place_box_arrow(@border-width, @background-color, @border-color, @size) when (@place = "left"){
+.box_arrow(@border-width : 2px, @border-color: #88B7D5, @size: 10px, @background-color: #C2E1F5, @place, @offset: 50%) when (@place = left){
 	&:after, &:before {
 		right: 100%;
-		top: 50%;
+		top: @offset;
 	}
 	&:after {
 		border-right-color: @background-color;
@@ -70,10 +70,10 @@
 	}
 }
 
-.place_box_arrow(@border-width, @background-color, @border-color, @size) when (@place = "right"){
+.box_arrow(@border-width : 2px, @border-color: #88B7D5, @size: 10px, @background-color: #C2E1F5, @place, @offset: 50%) when (@place = right){
 	&:after, &:before {
 		left: 100%;
-		top: 50%;
+		top: @offset;
 	}
 	&:after {
 		border-left-color: @background-color;
@@ -84,3 +84,90 @@
 		margin-top: -@size - (round(@border-width * 1.41421356));
 	}
 }
+
+// .box_arrow(@border-width : 2px, @border-color: #88B7D5, @size: 10px, @background-color: #C2E1F5, @place: "top") {
+	
+// 	&:after, &:before {
+// 		border: solid transparent;
+// 		content: " ";
+// 		height: 0;
+// 		width: 0;
+// 		position: absolute;
+// 		pointer-events: none;
+// 		z-index: 1;
+// 	}
+
+// 	&:after {
+// 		border-color: hsla(hue(@background-color), saturation(@background-color), lightness(@background-color), 0);
+// 		border-width: @size;
+// 	}
+
+// 	&:before {
+// 		border-color: hsla(hue(@border-color), saturation(@border-color), lightness(@border-color), 0);
+// 		border-width: @size + (round(@border-width * 1.41421356));
+// 	}
+
+// 	.place_box_arrow(@border-width, @background-color, @border-color, @size);
+// }
+
+// .place_box_arrow(@border-width, @background-color, @border-color, @size) when (@place = "bottom"){
+// 	&:after, &:before {
+// 		top: 100%;
+// 		left: 50%;
+// 	}
+// 	&:after {
+// 		border-top-color: @background-color;
+// 		margin-left: -@size;
+// 	}
+// 	&:before {
+// 		border-top-color: @border-color;
+// 		margin-left: -@size - (round(@border-width * 1.41421356));
+// 	}
+// }
+
+// .place_box_arrow(@border-width, @background-color, @border-color, @size) when (@place = "top"){
+
+// 	&:after, &:before {
+// 		bottom: 100%;
+// 		left: 50%;
+// 	}
+// 	&:after {
+// 		border-bottom-color: @background-color;
+// 		margin-left: -@size;
+// 	}
+// 	&:before {
+// 		border-bottom-color: @border-color;
+// 		margin-left: -@size - (round(@border-width * 1.41421356));
+// 	}
+// }
+
+// .place_box_arrow(@border-width, @background-color, @border-color, @size) when (@place = "left"){
+// 	&:after, &:before {
+// 		right: 100%;
+// 		top: 50%;
+// 	}
+// 	&:after {
+// 		border-right-color: @background-color;
+// 		margin-left: -@size;
+// 		margin-top: -@size;
+// 	}
+// 	&:before {
+// 		border-right-color: @border-color;
+// 		margin-top: -@size - (round(@border-width * 1.41421356));
+// 	}
+// }
+
+// .place_box_arrow(@border-width, @background-color, @border-color, @size) when (@place = "right"){
+// 	&:after, &:before {
+// 		left: 100%;
+// 		top: 50%;
+// 	}
+// 	&:after {
+// 		border-left-color: @background-color;
+// 		margin-top: -@size;
+// 	}
+// 	&:before {
+// 		border-left-color: @border-color;
+// 		margin-top: -@size - (round(@border-width * 1.41421356));
+// 	}
+// }
