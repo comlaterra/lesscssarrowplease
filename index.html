@@ -5,12 +5,10 @@
     <title>lesscssarrowplease</title>
     <meta name="description" content="CSSArrowPlease give a less mixin that generate the CSS code for a custom box with an arrow extending out from the side.">
     <link href='http://fonts.googleapis.com/css?family=Terminal+Dosis:400,700' rel='stylesheet' type='text/css'>
-    <!-- <link rel="stylesheet" type="text/css" href="css/styles.css" /> -->
     <link rel="stylesheet/less" type="text/css" href="css/styles.less" />
     <script src="js/less-1.7.3.min.js" type="text/javascript"></script>
   </head>
   <body>
-
     <div id='content' class='clr'>
       <div class='preview_and_configuration'>
         <div class='preview'>
@@ -55,8 +53,15 @@
       </div>
 
       <div class='css_result'>
-        <code class='code' readonly='readonly'></code>
-        <div class='copy_code'></div>
+        <code class='code' readonly='readonly'>
+          @arrow-size : <span id="code-arrow-size"></span>;
+          @border-color: <span id="code-border-color"></span>;
+          @background-color: <span id="code-background-color"></span>;
+          @border-width : <span id="code-border-width"></span>;
+          @place : "<span id="code-place">top</span>";
+          .box_arrow(@border-width,@border-color, @arrow-size, @background-color,@place);
+        </code>
+        <div class='copy_code'>copy</div>
       </div>
   
       <a href="http://github.com/hojberg/cssarrowplease" class='fork_me ir'>
