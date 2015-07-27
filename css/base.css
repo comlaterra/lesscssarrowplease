@@ -59,31 +59,3 @@ input[type='radio']           { border: 0; }
 
 /* fork_me */
 .fork_me                          { position: absolute; top: 0; right: 0; display: block; width: 149px; height: 149px; background: url(../img/fork.png); }
-
-@arrow-size : 30px;
-@border-color: #88b7d5;
-@background-color: #c2e1f5;
-@border-width : 8px;
-@place : "top";
-
-@import "arrowplease";
-
-.arrow_box{
-
-	background-color: @background-color;
-	border-color: @border-color;
-
-	width: 280px;
-	height: 170px;
-
-	border-radius: 10px;
-	border-width: @border-width;
-	border-style: solid;
-
-	margin: 0 auto;
-	padding: 40px;
-
-	position: relative;
-
-	.box_arrow(@border-width,@border-color, @arrow-size, @background-color,@place);
-}

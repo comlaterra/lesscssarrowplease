@@ -29,3 +29,4 @@ input[type='radio']{border:0}
 .arrow_box{background-color:#c2e1f5;border-color:#88b7d5;width:280px;height:170px;border-radius:10px;border-width:8px;border-style:solid;margin:0 auto;padding:40px;position:relative}.arrow_box:after,.arrow_box:before{border:solid transparent;content:" ";height:0;width:0;position:absolute;pointer-events:none;z-index:1}
 .arrow_box:after{border-color:rgba(194,224,245,0);border-width:40px}
 .arrow_box:before{border-color:rgba(134,183,213,0);border-width:51px}
+

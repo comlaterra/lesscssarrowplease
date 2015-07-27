@@ -33,7 +33,7 @@
             <ol class='section'>
               <li>
                 <label for='size'>Size</label>
-                <input class='size' id='size' value="40px"/>
+                <input class='size' id='size' value="30px"/>
               </li>
               <li>
                 <label for='color'>Color</label>
@@ -43,7 +43,7 @@
             <ol class='section'>
               <li>
                 <label for='border_width'>Border width</label>
-                <input class='border_width' id='border_width' value="8px" />
+                <input class='border_width' id='border_width' value="4px" />
               </li>
               <li>
                 <label for='border_color'>Border color</label>
@@ -75,46 +75,10 @@
       <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://lesscssarrowplease.com" data-text="Simple mixin to create CSS arrows to a custom box" data-via="comlaterra">Tweet</a>
     </footer>
 
-    <script src='js/less-1.7.3.min.js'></script>
-    <script>
-      function lesscssarrowplease(){
-        var inputs = document.getElementsByTagName("input");
-        var inputsMapping = {};
 
-        for(var i = 0; i < inputs.length; i++) {
-          var input = inputs[i];
-          if(input.name === "position"){
-            if (input.checked){
-              inputsMapping["place"] = input;
-            }
-          }else{
-            inputsMapping[input.id] = input;
-          }
-          input.addEventListener('change',function(e){
-            this.modBox(input.id);
-          }.bind(this),false);
-        }
-        //less.watch();
-        this.modBox = function(){
-          less.modifyVars({
-            '@arrow-border-color' : inputsMapping.border_color.value,
-            '@color': inputsMapping.color.value,
-            '@border-width': inputsMapping.border_width.value,
-            '@arrow-size' : inputsMapping.size.value,
-            '@place' : inputsMapping.place.value,
-/*
-            '@ptx-border-color' : inputsMapping.border_color.value,
-            '@ptx-background-color' : inputsMapping.color.value,
-            '@ptx-border-width' : inputsMapping.border_width.value,
-            '@ptx-arrow-size' : inputsMapping.size.value,
-            '@ptx-place' : inputsMapping.place.value,
-  */          
-          });
-        }
-      }
-      var lsscssrrwpls = new lesscssarrowplease();
-    </script>
-rmado que quieres unirte a la lista de envíos.
+    
+    <script src='js/less-1.7.3.min.js'></script>
+    <script src='js/lesscssarrowplease.js'></script>
     <script>
     /*  var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-30519406-1']);
