@@ -9,7 +9,7 @@ function lesscssarrowplease(){
 			inputsMapping[input.id] = input;
 		}
 		input.addEventListener('change',function(e){
-			this.modBox(input.id);
+			this.modBox();
 		}.bind(this),false);
 	}
 
@@ -19,14 +19,14 @@ function lesscssarrowplease(){
 	};
 
 	this.modBox = function(){
-	  less.modifyVars({
-	    '@arrow-border-color' : inputsMapping.border_color.value,
-	    '@color': inputsMapping.color.value,
-	    '@border-width': inputsMapping.border_width.value,
-	    '@arrow-size' : inputsMapping.size.value,
-	    '@place' : this.getCheckedPlaceValue()
-	  });
-	  this.printVars();
+		less.modifyVars({
+			'@border-color' : inputsMapping.border_color.value,
+		    '@background-color': inputsMapping.color.value,
+		    '@border-width': inputsMapping.border_width.value,
+		    '@arrow-size' : inputsMapping.size.value,
+		    '@place' : this.getCheckedPlaceValue()
+		});
+		this.printVars();
 	};
 
 	this.printVars = function(){
