@@ -12,7 +12,7 @@ input[type='radio']           { border: 0; }
 
 /* =LAYOUT
 ====================================================== */
-#content                      { width: 800px; margin: auto; padding: 100px; padding-bottom: 60px;
+  #content { width: 800px; margin: auto; padding: 100px; padding-bottom: 60px;
   /* white radial gradient background */
   background: -moz-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 70%);
   background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(255,255,255,0.5)), color-stop(70%,rgba(255,255,255,0)));
@@ -31,9 +31,6 @@ input[type='radio']           { border: 0; }
 
 /* =MODULES
 ====================================================== */
-/* preview */
-//.arrow_box                        { padding: 40px; width: 280px; height: 100px; border-radius: 6px; }
-
 /* logo */
 .logo                             { color: #ddf8c6; text-align: center; font-size: 54px; line-height: 54px; font-weight: bold; text-transform: uppercase; text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4); }
 
@@ -86,3 +83,6 @@ input[type='radio']           { border: 0; }
 	position: relative;
 	.box_arrow(@border-width,@border-color, @arrow-size, @background-color,@place);
 }
+
+.base_color{ background-color: @background-color; }
+.border_color{ background-color: @border-color; }
