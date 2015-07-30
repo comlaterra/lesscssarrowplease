@@ -7,6 +7,7 @@
     <link href='http://fonts.googleapis.com/css?family=Terminal+Dosis:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet/less" type="text/css" href="css/styles.less" />
     <script src="js/less-1.7.3.min.js" type="text/javascript"></script>
+    
   </head>
   <body>
     <div id='content' class='clr'>
@@ -35,7 +36,7 @@
               </li>
               <li>
                 <label for='color'>Color</label>
-                <input class='base_color color' value="#c2e1f5" id='color' />
+                <input class='base_color color {hash:true}' value="#c2e1f5" id='color'/>
               </li>
             </ol>
             <ol class='section'>
@@ -45,7 +46,7 @@
               </li>
               <li>
                 <label for='border_color'>Border color</label>
-                <input class='border_color color' id='border_color' value="#88b7d5"/>
+                <input class='border_color color {hash:true}' id='border_color' value="#88b7d5"/>
               </li>
             </ol>
           </div>
@@ -89,6 +90,7 @@
     
     <script src='js/less-1.7.3.min.js'></script>
     <script src='js/lesscssarrowplease.js'></script>
+    <script src="js/res/jscolor/jscolor.js" type="text/javascript"></script>
     <script>
     /*  var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-30519406-1']);
